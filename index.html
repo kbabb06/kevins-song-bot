@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Song Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    #submitBtn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 16px;
+      background: #f4f4f4;
+      border-radius: 10px;
+    }
+
+    .song-option {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 10px;
+      background: white;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    #selectedSong {
+      margin-top: 16px;
+      padding: 12px;
+      background: #d4edda;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Request a Song</h1>
+
+  <input id="songInput" placeholder="Type a vibe or artist..." />
+  <button id="submitBtn">Submit Request</button>
+
+  <div id="result"></div>
+  <div id="selectedSong"></div>
+
+  <script>
+    const submitBtn = document.getElementById("submitBtn");
+    const songInput = document.getElementById("songInput");
+    const result = document.getElementById("result");
+    const selectedSong = document.getElementById("selectedSong");
+
+    function chooseSong(song) {
+      selectedSong.style.display = "block";
+      selectedSong.textContent = "Selected: " + song;
+    }
+
+    async function sendRequest() {
+      const input = songInput.value.trim();
+
+      if (!input) {
+        result.innerHTML = "Enter something first.";
+        return;
+      }
+
+      result.innerHTML = "Thinking...";
+
+      try {
+        const res = await fetch("http://localhost:3000/song-request", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ request: input })
+        });
+
+        const data = await res.json();
+
+        const matches = data.matches || [];
+
+        if (matches.length === 0) {
+          result.innerHTML = "No matches found.";
+          return;
+        }
+
+        result.innerHTML = matches.map(song =>
+          `<button class="song-option" onclick="chooseSong('${song}')">${song}</button>`
+        ).join("");
+
+      } catch (err) {
+        result.innerHTML = "Server issue. Make sure it's running.";
+      }
+    }
+
+    submitBtn.onclick = sendRequest;
+    window.chooseSong = chooseSong;
+  </script>
+
+</body>
+</html>
