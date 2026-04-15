@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<body style="background:#0b0b0b;color:#fff;font-family:sans-serif;max-width:700px;margin:30px auto;padding:20px;">
+<body style="background:transparent;color:#fff;font-family:sans-serif;">
 
-<h1>🎸 Request a Song</h1>
+<div style="max-width:600px;margin:auto;padding:10px;">
 
 <input id="requester" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;" />
-<input id="email" placeholder="Email (required)" style="width:100%;padding:12px;margin-bottom:10px;border:2px solid #444;" />
+<input id="email" placeholder="Email (required)" style="width:100%;padding:12px;margin-bottom:10px;" />
 <input id="phone" placeholder="Phone (optional)" style="width:100%;padding:12px;margin-bottom:10px;" />
 
-<input id="search" placeholder="Search song..." style="width:100%;padding:16px;font-size:18px;" />
+<input id="search" placeholder="Search song..." style="width:100%;padding:14px;font-size:16px;" />
 
-<div id="status" style="margin-top:10px;color:#f66;"></div>
-<div id="results" style="margin-top:20px;"></div>
+<div id="status" style="margin-top:10px;"></div>
+<div id="results" style="margin-top:15px;"></div>
+
+</div>
 
 <script>
 let debounce;
@@ -33,9 +35,9 @@ async function searchSongs() {
 
   data.forEach(song => {
     const div = document.createElement("div");
-    div.style.padding = "14px";
-    div.style.border = "1px solid #222";
-    div.style.marginBottom = "10px";
+    div.style.padding = "12px";
+    div.style.border = "1px solid #333";
+    div.style.marginBottom = "8px";
     div.style.cursor = "pointer";
 
     div.innerHTML = "<strong>" + song.song + "</strong><br><span style='color:#aaa'>" + song.artist + "</span>";
@@ -43,9 +45,8 @@ async function searchSongs() {
     div.onclick = async function () {
       const email = document.getElementById("email").value;
 
-      // 🔒 FRONTEND VALIDATION
       if (!email || !email.includes("@")) {
-        document.getElementById("status").innerText = "Valid email required before requesting";
+        document.getElementById("status").innerText = "Valid email required";
         return;
       }
 
