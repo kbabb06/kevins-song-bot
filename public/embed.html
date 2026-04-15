@@ -1,72 +1,173 @@
 <!DOCTYPE html>
 <html>
-<body style="background:transparent;color:#fff;font-family:sans-serif;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embed Request Form</title>
+</head>
+<body style="margin:0;background:transparent;color:#fff;font-family:sans-serif;">
 
-<div style="max-width:600px;margin:auto;padding:10px;">
+<div style="max-width:600px;margin:auto;padding:10px;box-sizing:border-box;">
 
-<input id="requester" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;" />
-<input id="email" placeholder="Email (required)" style="width:100%;padding:12px;margin-bottom:10px;" />
-<input id="phone" placeholder="Phone (optional)" style="width:100%;padding:12px;margin-bottom:10px;" />
+  <input id="requester" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;box-sizing:border-box;" />
+  <input id="email" placeholder="Email (required)" style="width:100%;padding:12px;margin-bottom:10px;box-sizing:border-box;" />
+  <input id="phone" placeholder="Phone (optional)" style="width:100%;padding:12px;margin-bottom:10px;box-sizing:border-box;" />
+  <input id="search" placeholder="Search song..." style="width:100%;padding:14px;font-size:16px;box-sizing:border-box;" />
 
-<input id="search" placeholder="Search song..." style="width:100%;padding:14px;font-size:16px;" />
+  <div id="status" style="margin-top:10px;min-height:24px;"></div>
+  <div id="selectedWrap" style="margin-top:12px;display:none;padding:12px;border:1px solid #444;border-radius:8px;">
+    <div style="font-size:12px;color:#aaa;margin-bottom:4px;">Selected song</div>
+    <div id="selectedSongText" style="font-size:16px;font-weight:bold;"></div>
+  </div>
 
-<div id="status" style="margin-top:10px;"></div>
-<div id="results" style="margin-top:15px;"></div>
+  <button id="submitBtn" disabled style="width:100%;padding:14px;margin-top:14px;font-size:16px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;opacity:0.5;">
+    Submit Request
+  </button>
+
+  <div id="results" style="margin-top:15px;"></div>
 
 </div>
 
 <script>
 let debounce;
+let selectedSong = null;
 
-document.getElementById("search").addEventListener("input", function () {
+const searchInput = document.getElementById("search");
+const resultsEl = document.getElementById("results");
+const statusEl = document.getElementById("status");
+const submitBtn = document.getElementById("submitBtn");
+const selectedWrap = document.getElementById("selectedWrap");
+const selectedSongText = document.getElementById("selectedSongText");
+
+searchInput.addEventListener("input", function () {
   clearTimeout(debounce);
+
+  if (!searchInput.value.trim()) {
+    resultsEl.innerHTML = "";
+    clearSelectedSong();
+    return;
+  }
+
   debounce = setTimeout(searchSongs, 250);
 });
 
+submitBtn.addEventListener("click", submitRequest);
+
+function clearSelectedSong() {
+  selectedSong = null;
+  selectedWrap.style.display = "none";
+  selectedSongText.innerText = "";
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = "0.5";
+}
+
+function setSelectedSong(song) {
+  selectedSong = song;
+  selectedWrap.style.display = "block";
+  selectedSongText.innerText = song.song + " - " + song.artist;
+  submitBtn.disabled = false;
+  submitBtn.style.opacity = "1";
+}
+
 async function searchSongs() {
-  const q = document.getElementById("search").value;
+  const q = searchInput.value.trim();
   if (!q) return;
+
+  statusEl.innerText = "";
 
   const res = await fetch("/api/songs?q=" + encodeURIComponent(q));
   const data = await res.json();
 
-  const container = document.getElementById("results");
-  container.innerHTML = "";
+  resultsEl.innerHTML = "";
+  clearSelectedSong();
 
-  data.forEach(song => {
+  if (!Array.isArray(data) || data.length === 0) {
+    resultsEl.innerHTML = "<div style='color:#aaa;'>No matches found.</div>";
+    return;
+  }
+
+  data.forEach(function (song) {
     const div = document.createElement("div");
     div.style.padding = "12px";
     div.style.border = "1px solid #333";
     div.style.marginBottom = "8px";
     div.style.cursor = "pointer";
+    div.style.borderRadius = "8px";
+    div.style.background = "#111";
 
-    div.innerHTML = "<strong>" + song.song + "</strong><br><span style='color:#aaa'>" + song.artist + "</span>";
+    div.innerHTML =
+      "<strong>" + song.song + "</strong><br><span style='color:#aaa'>" + song.artist + "</span>";
 
-    div.onclick = async function () {
-      const email = document.getElementById("email").value;
+    div.onclick = function () {
+      setSelectedSong(song);
 
-      if (!email || !email.includes("@")) {
-        document.getElementById("status").innerText = "Valid email required";
-        return;
-      }
-
-      await fetch("/api/queue", {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({
-          song: song.song,
-          artist: song.artist,
-          requester: document.getElementById("requester").value,
-          email: email,
-          phone: document.getElementById("phone").value
-        })
+      const cards = resultsEl.querySelectorAll("[data-song-card='true']");
+      cards.forEach(function (card) {
+        card.style.border = "1px solid #333";
+        card.style.background = "#111";
       });
 
-      document.getElementById("status").innerText = "Added: " + song.song;
+      div.style.border = "2px solid #6ea8fe";
+      div.style.background = "#171f2b";
     };
 
-    container.appendChild(div);
+    div.setAttribute("data-song-card", "true");
+    resultsEl.appendChild(div);
   });
+}
+
+async function submitRequest() {
+  if (!selectedSong) {
+    statusEl.innerText = "Please select a song first.";
+    return;
+  }
+
+  const email = document.getElementById("email").value.trim();
+  const requester = document.getElementById("requester").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+
+  if (!email || !email.includes("@")) {
+    statusEl.innerText = "Valid email required.";
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = "0.5";
+  statusEl.innerText = "Submitting...";
+
+  try {
+    const res = await fetch("/api/queue", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        song: selectedSong.song,
+        artist: selectedSong.artist,
+        requester: requester,
+        email: email,
+        phone: phone
+      })
+    });
+
+    const result = await res.json();
+
+    if (!res.ok || !result.success) {
+      statusEl.innerText = result.error || "Request failed.";
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = "1";
+      return;
+    }
+
+    statusEl.innerText = "Request added: " + selectedSong.song;
+
+    document.getElementById("search").value = "";
+    resultsEl.innerHTML = "";
+    clearSelectedSong();
+  } catch (err) {
+    console.error(err);
+    statusEl.innerText = "Request failed.";
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+  }
 }
 </script>
 
