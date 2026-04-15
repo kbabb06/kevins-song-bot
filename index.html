@@ -1,123 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Song Request</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    #submitBtn {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      background: black;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    #result {
-      margin-top: 20px;
-      padding: 16px;
-      background: #f4f4f4;
-      border-radius: 10px;
-    }
-
-    .song-option {
-      display: block;
-      width: 100%;
-      margin-top: 8px;
-      padding: 10px;
-      background: white;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    #selectedSong {
-      margin-top: 16px;
-      padding: 12px;
-      background: #d4edda;
-      border-radius: 8px;
-      display: none;
-    }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-
-  <h1>Request a Song</h1>
-
-  <input id="songInput" placeholder="Type a vibe or artist..." />
-  <button id="submitBtn">Submit Request</button>
-
-  <div id="result"></div>
-  <div id="selectedSong"></div>
-
-  <script>
-    const submitBtn = document.getElementById("submitBtn");
-    const songInput = document.getElementById("songInput");
-    const result = document.getElementById("result");
-    const selectedSong = document.getElementById("selectedSong");
-
-    function chooseSong(song) {
-      selectedSong.style.display = "block";
-      selectedSong.textContent = "Selected: " + song;
-    }
-
-    async function sendRequest() {
-      const input = songInput.value.trim();
-
-      if (!input) {
-        result.innerHTML = "Enter something first.";
-        return;
-      }
-
-      result.innerHTML = "Thinking...";
-
-      try {
-        const res = await fetch("http://localhost:3000/song-request", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ request: input })
-        });
-
-        const data = await res.json();
-
-        const matches = data.matches || [];
-
-        if (matches.length === 0) {
-          result.innerHTML = "No matches found.";
-          return;
-        }
-
-        result.innerHTML = matches.map(song =>
-          `<button class="song-option" onclick="chooseSong('${song}')">${song}</button>`
-        ).join("");
-
-      } catch (err) {
-        result.innerHTML = "Server issue. Make sure it's running.";
-      }
-    }
-
-    submitBtn.onclick = sendRequest;
-    window.chooseSong = chooseSong;
-  </script>
-
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>cat &lt;&lt;'EOF' &gt; public/index.html</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;!DOCTYPE html&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;html&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;body style="background:#111;color:#fff;font-family:sans-serif;max-width:600px;margin:40px auto;"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;h1&gt;Request a Song&lt;/h1&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;input id="search" placeholder="Search..." style="width:100%;padding:10px;" /&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;button onclick="searchSongs()" style="width:100%;padding:10px;margin-top:10px;"&gt;Search&lt;/button&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;div id="results"&gt;&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;script&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>async function searchSongs() {</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const q = document.getElementById("search").value;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const res = await fetch('/api/songs?q=' + encodeURIComponent(q));</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const data = await res.json();</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const container = document.getElementById("results");</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>container.innerHTML = "";</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>data.forEach(song =&gt; {</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>const div = document.createElement("div");</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.style.padding = "10px";</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.style.borderBottom = "1px solid #333";</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.innerText = song.song + " - " + song.artist;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.onclick = async () =&gt; {</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>await fetch('/api/queue', {</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>method: 'POST',</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>headers: { 'Content-Type': 'application/json' },</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>body: JSON.stringify(song)</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>});</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>alert("Queued: " + song.song);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>};</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>container.appendChild(div);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>});</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/script&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/body&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/html&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>EOF</b></span></h1>
 </body>
 </html>

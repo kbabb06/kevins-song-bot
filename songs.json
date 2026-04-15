@@ -1,0 +1,1671 @@
+
+ [
+  {
+    "song": "Away From The Sun",
+    "artist": "3 Doors Down"
+  },
+  {
+    "song": "What\u2019s Up",
+    "artist": "4 Non Blondes"
+  },
+  {
+    "song": "Amber",
+    "artist": "311"
+  },
+  {
+    "song": "Take On Me",
+    "artist": "a-ha"
+  },
+  {
+    "song": "Water Under The Bridge",
+    "artist": "Adele"
+  },
+  {
+    "song": "I Dont Want To Miss A Thing",
+    "artist": "Aerosmith"
+  },
+  {
+    "song": "Sweet Emotion",
+    "artist": "Aerosmith"
+  },
+  {
+    "song": "Its Five Oclock Somewhere",
+    "artist": "Alan Jackson and Jimmy Buffett"
+  },
+  {
+    "song": "Hand In My Pocket",
+    "artist": "Alanis Morissette"
+  },
+  {
+    "song": "Ironic",
+    "artist": "Alanis Morissette"
+  },
+  {
+    "song": "Man In The Box",
+    "artist": "Alice In Chains"
+  },
+  {
+    "song": "Rooster",
+    "artist": "Alice In Chains"
+  },
+  {
+    "song": "Hell Yes",
+    "artist": "Alkaline Trio"
+  },
+  {
+    "song": "Private Eye",
+    "artist": "Alkaline Trio"
+  },
+  {
+    "song": "Dirty Little Secret",
+    "artist": "All American Rejects"
+  },
+  {
+    "song": "Sweet Pea",
+    "artist": "Amos Lee"
+  },
+  {
+    "song": "Valerie",
+    "artist": "Amy Winehouse"
+  },
+  {
+    "song": "The Adventure",
+    "artist": "Angels & Airwaves"
+  },
+  {
+    "song": "Doesnt Remind Me",
+    "artist": "Audioslave"
+  },
+  {
+    "song": "I Am The Highway",
+    "artist": "Audioslave"
+  },
+  {
+    "song": "Im With You",
+    "artist": "Avril Lavigne"
+  },
+  {
+    "song": "Taking Care Of Business",
+    "artist": "Bachman-Turner Overdrive"
+  },
+  {
+    "song": "Feel Like Making Love",
+    "artist": "Bad Company"
+  },
+  {
+    "song": "Pompeii",
+    "artist": "Bastille"
+  },
+  {
+    "song": "Luckiest",
+    "artist": "Ben Folds"
+  },
+  {
+    "song": "Brick",
+    "artist": "Ben Folds Five"
+  },
+  {
+    "song": "Diamonds On The Inside",
+    "artist": "Ben Harper"
+  },
+  {
+    "song": "Good",
+    "artist": "Better Than Ezra"
+  },
+  {
+    "song": "Halo",
+    "artist": "Beyonc\u00e9"
+  },
+  {
+    "song": "Lean On Me",
+    "artist": "Bill Withers"
+  },
+  {
+    "song": "Use Me",
+    "artist": "Bill Withers"
+  },
+  {
+    "song": "Aint No Sunshine",
+    "artist": "Bill Withers"
+  },
+  {
+    "song": "No Rain",
+    "artist": "Blind Melon"
+  },
+  {
+    "song": "I Miss You",
+    "artist": "Blink 182"
+  },
+  {
+    "song": "Feeling This",
+    "artist": "Blink 182"
+  },
+  {
+    "song": "All The Small Things",
+    "artist": "Blink-182"
+  },
+  {
+    "song": "First Date",
+    "artist": "Blink-182"
+  },
+  {
+    "song": "The Rock Show",
+    "artist": "Blink-182"
+  },
+  {
+    "song": "Hate Me",
+    "artist": "Blue October"
+  },
+  {
+    "song": "Knockin On Heaven\u2019s Door",
+    "artist": "Bob Dylan"
+  },
+  {
+    "song": "One Love",
+    "artist": "Bob Marley & The Wailers"
+  },
+  {
+    "song": "Turn The Page",
+    "artist": "Bob Seger"
+  },
+  {
+    "song": "Dont Worry Be Happy",
+    "artist": "Bobby McFerrin"
+  },
+  {
+    "song": "Livin On A Prayer",
+    "artist": "Bon Jovi"
+  },
+  {
+    "song": "1985",
+    "artist": "Bowling for Soup"
+  },
+  {
+    "song": "There Is",
+    "artist": "Box Car Racer"
+  },
+  {
+    "song": "Thunder",
+    "artist": "Boys Like Girls"
+  },
+  {
+    "song": "Two Is Better Than One",
+    "artist": "Boys Like Girls featuring Taylor Swift"
+  },
+  {
+    "song": "Summer Of 69",
+    "artist": "Bryan Adams"
+  },
+  {
+    "song": "Glycerine",
+    "artist": "Bush"
+  },
+  {
+    "song": "Swallowed",
+    "artist": "Bush"
+  },
+  {
+    "song": "21",
+    "artist": "Butch Walker"
+  },
+  {
+    "song": "Closest Thing To You Im Gonna Find",
+    "artist": "Butch Walker"
+  },
+  {
+    "song": "Honestly",
+    "artist": "Cartel"
+  },
+  {
+    "song": "My Heart Will Go On",
+    "artist": "Celine Dion"
+  },
+  {
+    "song": "Casual",
+    "artist": "Chappell Roan"
+  },
+  {
+    "song": "Pink Pony Club",
+    "artist": "Chappell Roan"
+  },
+  {
+    "song": "I Want You To Want Me",
+    "artist": "Cheap Trick"
+  },
+  {
+    "song": "Send The Pain Below",
+    "artist": "Chevelle"
+  },
+  {
+    "song": "White Horse",
+    "artist": "Chris Stapleton"
+  },
+  {
+    "song": "You Should Probably Leave",
+    "artist": "Chris Stapleton"
+  },
+  {
+    "song": "A Thousand Years",
+    "artist": "Christina Perri"
+  },
+  {
+    "song": "Comin Home",
+    "artist": "City and Colour"
+  },
+  {
+    "song": "The Little Things",
+    "artist": "Colbie Caillat"
+  },
+  {
+    "song": "Clocks",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "Fix You",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "In My Place",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "Paradise",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "Speed Of Sound",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "The Scientist",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "Trouble",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "Viva La Vida",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "Warning Sign",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "Yellow",
+    "artist": "Coldplay"
+  },
+  {
+    "song": "The World I Know",
+    "artist": "Collective Soul"
+  },
+  {
+    "song": "December",
+    "artist": "Collective Soul"
+  },
+  {
+    "song": "Shine",
+    "artist": "Collective Soul"
+  },
+  {
+    "song": "A Long December",
+    "artist": "Counting Crows"
+  },
+  {
+    "song": "Accidentally In Love",
+    "artist": "Counting Crows"
+  },
+  {
+    "song": "Higher",
+    "artist": "Creed"
+  },
+  {
+    "song": "My Own Prison",
+    "artist": "Creed"
+  },
+  {
+    "song": "My Sacrifice",
+    "artist": "Creed"
+  },
+  {
+    "song": "Bad Moon Rising",
+    "artist": "Creedence Clearwater Revival"
+  },
+  {
+    "song": "Have You Ever Seen The Rain",
+    "artist": "Creedence Clearwater Revival"
+  },
+  {
+    "song": "Proud Mary",
+    "artist": "Creedence Clearwater Revival"
+  },
+  {
+    "song": "Time After Time",
+    "artist": "Cyndi Lauper"
+  },
+  {
+    "song": "Get Lucky",
+    "artist": "Daft Punk (featuring Pharrell Williams and Nile Rodgers)"
+  },
+  {
+    "song": "Vindicated",
+    "artist": "Dashboard Confessional"
+  },
+  {
+    "song": "Home",
+    "artist": "Daughtry"
+  },
+  {
+    "song": "Crash Into Me",
+    "artist": "Dave Matthews Band"
+  },
+  {
+    "song": "Hysteria",
+    "artist": "Def Leppard"
+  },
+  {
+    "song": "Lay Me Down",
+    "artist": "Dirtyheads"
+  },
+  {
+    "song": "Counting Blue Cars",
+    "artist": "Dishwalla"
+  },
+  {
+    "song": "Goodbye Earl",
+    "artist": "Dixie Chicks"
+  },
+  {
+    "song": "Drift Away",
+    "artist": "Dobie Gray"
+  },
+  {
+    "song": "Boys Of Summer",
+    "artist": "Don Henley"
+  },
+  {
+    "song": "Caught By The River",
+    "artist": "Doves"
+  },
+  {
+    "song": "Boyz In The Hood",
+    "artist": "Dynamite Hack"
+  },
+  {
+    "song": "Save Tonight",
+    "artist": "Eagle-Eye Cherry"
+  },
+  {
+    "song": "Hotel California",
+    "artist": "Eagles"
+  },
+  {
+    "song": "Thinking Out Loud",
+    "artist": "Ed Sheeran"
+  },
+  {
+    "song": "Photograph",
+    "artist": "Ed Sheeran"
+  },
+  {
+    "song": "Ill Be",
+    "artist": "Edwin McCain"
+  },
+  {
+    "song": "Fooled Around And Fell In Love",
+    "artist": "Elvin Bishop"
+  },
+  {
+    "song": "Cant Help Falling In Love",
+    "artist": "Elvis Presley"
+  },
+  {
+    "song": "Wonderful Tonight",
+    "artist": "Eric Clapton"
+  },
+  {
+    "song": "Lay Down Sally",
+    "artist": "Eric Clapton"
+  },
+  {
+    "song": "At Last",
+    "artist": "Etta James"
+  },
+  {
+    "song": "Inside Out",
+    "artist": "Eve 6"
+  },
+  {
+    "song": "Santa Monica",
+    "artist": "Everclear"
+  },
+  {
+    "song": "Sugar We're Goin Down",
+    "artist": "Fall Out Boy"
+  },
+  {
+    "song": "Grand Theft Autumn",
+    "artist": "Fall Out Boy"
+  },
+  {
+    "song": "Out Of My Head",
+    "artist": "Fastball"
+  },
+  {
+    "song": "Take A Picture",
+    "artist": "Filter"
+  },
+  {
+    "song": "Landslide",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "song": "Dreams",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "song": "Everywhere",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "song": "Most Beautiful Girl In The Room",
+    "artist": "Flight of the Conchords"
+  },
+  {
+    "song": "Next Year",
+    "artist": "Foo Fighters"
+  },
+  {
+    "song": "Times Like These",
+    "artist": "Foo Fighters"
+  },
+  {
+    "song": "Everlong",
+    "artist": "Foo Fighters"
+  },
+  {
+    "song": "My Hero",
+    "artist": "Foo Fighters"
+  },
+  {
+    "song": "Pumped Up Kicks",
+    "artist": "Foster the People"
+  },
+  {
+    "song": "Stacys Mom",
+    "artist": "Fountains of Wayne"
+  },
+  {
+    "song": "Fly Me To The Moon",
+    "artist": "Frank Sinatra"
+  },
+  {
+    "song": "Young At Heart",
+    "artist": "Frank Sinatra"
+  },
+  {
+    "song": "All Right Now",
+    "artist": "Free"
+  },
+  {
+    "song": "Friends In Low Places",
+    "artist": "Garth Brooks"
+  },
+  {
+    "song": "Mad World",
+    "artist": "Gary Jules"
+  },
+  {
+    "song": "I Dont Want To Be",
+    "artist": "Gavin DeGraw"
+  },
+  {
+    "song": "Iris",
+    "artist": "Goo Goo Dolls"
+  },
+  {
+    "song": "Somebody I Used To Know",
+    "artist": "Gotye (featuring Kimbra)"
+  },
+  {
+    "song": "Longview",
+    "artist": "Green Day"
+  },
+  {
+    "song": "Basket Case",
+    "artist": "Green Day"
+  },
+  {
+    "song": "Good Riddance",
+    "artist": "Green Day"
+  },
+  {
+    "song": "When I Come Around",
+    "artist": "Green Day"
+  },
+  {
+    "song": "Breathe",
+    "artist": "Greenwheel"
+  },
+  {
+    "song": "Take A Bow",
+    "artist": "Greg Laswell"
+  },
+  {
+    "song": "Sweet Child O\u2019 Mine",
+    "artist": "Guns N' Roses"
+  },
+  {
+    "song": "Cats In The Cradle",
+    "artist": "Harry Chapin"
+  },
+  {
+    "song": "Watermelon Sugar",
+    "artist": "Harry Styles"
+  },
+  {
+    "song": "Flagpole Sitta",
+    "artist": "Harvey Danger"
+  },
+  {
+    "song": "Little One",
+    "artist": "Highly Suspect"
+  },
+  {
+    "song": "Lips Of An Angel",
+    "artist": "Hinder"
+  },
+  {
+    "song": "Malibu",
+    "artist": "Hole"
+  },
+  {
+    "song": "Let Her Cry",
+    "artist": "Hootie & the Blowfish"
+  },
+  {
+    "song": "Collide / You\u2019re Beautiful",
+    "artist": "Howie Day / James Blunt"
+  },
+  {
+    "song": "Radioactive",
+    "artist": "Imagine Dragons"
+  },
+  {
+    "song": "Drive",
+    "artist": "Incubus"
+  },
+  {
+    "song": "The Warmth",
+    "artist": "Incubus"
+  },
+  {
+    "song": "Are You In",
+    "artist": "Incubus"
+  },
+  {
+    "song": "Wish You Were Here",
+    "artist": "Incubus"
+  },
+  {
+    "song": "I Miss You",
+    "artist": "Incubus"
+  },
+  {
+    "song": "Mexico",
+    "artist": "Incubus"
+  },
+  {
+    "song": "Good People",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "I Got You",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Fortunate Fool",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Upside Down",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Better Together",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Bubbly Toes",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Breakdown",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Never Know",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Sitting Waiting Wishing",
+    "artist": "Jack Johnson"
+  },
+  {
+    "song": "Dark Blue",
+    "artist": "Jack's Mannequin"
+  },
+  {
+    "song": "Somebodys Baby",
+    "artist": "Jackson Browne"
+  },
+  {
+    "song": "Laid",
+    "artist": "James"
+  },
+  {
+    "song": "Fire And Rain",
+    "artist": "James Taylor"
+  },
+  {
+    "song": "The Remedy",
+    "artist": "Jason Mraz"
+  },
+  {
+    "song": "93 Million Miles",
+    "artist": "Jason Mraz"
+  },
+  {
+    "song": "I Won\u2019t Give Up",
+    "artist": "Jason Mraz"
+  },
+  {
+    "song": "Im Yours",
+    "artist": "Jason Mraz"
+  },
+  {
+    "song": "Lucky",
+    "artist": "Jason Mraz"
+  },
+  {
+    "song": "Wind Cries Mary",
+    "artist": "Jimi Hendrix"
+  },
+  {
+    "song": "Hey Joe",
+    "artist": "Jimi Hendrix"
+  },
+  {
+    "song": "Margaritaville",
+    "artist": "Jimmy Buffett"
+  },
+  {
+    "song": "Hear You Me",
+    "artist": "Jimmy Eat World"
+  },
+  {
+    "song": "Take Me Home Country Roads",
+    "artist": "John Denver"
+  },
+  {
+    "song": "Body Is A Wonderland",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Gravity",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Daughters",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Come When I Call",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Why Georgia",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "I Don\u2019t Trust Myself Loving You",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "In Your Atmosphere",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Waiting On The World To Change",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Paper Doll",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Heartbreak Warfare",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Say",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "No Such Thing",
+    "artist": "John Mayer"
+  },
+  {
+    "song": "Half Of My Heart",
+    "artist": "John Mayer (featuring Taylor Swift)"
+  },
+  {
+    "song": "Who You Love",
+    "artist": "John Mayer featuring Katy Perry"
+  },
+  {
+    "song": "Who Did You Think I Was",
+    "artist": "John Mayer Trio"
+  },
+  {
+    "song": "Vultures",
+    "artist": "John Mayer Trio"
+  },
+  {
+    "song": "Good Love Is On The Way",
+    "artist": "John Mayer Trio"
+  },
+  {
+    "song": "Hurts So Good",
+    "artist": "John Mellencamp"
+  },
+  {
+    "song": "Folsom Prison Blues",
+    "artist": "Johnny Cash"
+  },
+  {
+    "song": "Ring Of Fire",
+    "artist": "Johnny Cash"
+  },
+  {
+    "song": "Dont Stop Believin",
+    "artist": "Journey"
+  },
+  {
+    "song": "Lights",
+    "artist": "Journey"
+  }, 
+  {
+    "song": "Lovin Touchin Squeezin",
+    "artist": "Journey"
+  },
+  {
+    "song": "Love Yourself",
+    "artist": "Justin Bieber"
+  },
+  {
+    "song": "Sorry",
+    "artist": "Justin Bieber"
+  },
+  {
+    "song": "What Do You Mean",
+    "artist": "Justin Bieber"
+  },
+  {
+    "song": "Suit and Tie",
+    "artist": "Justin Timberlake"
+  },
+  {
+    "song": "Not A Bad Thing",
+    "artist": "Justin Timberlake"
+  },
+  {
+    "song": "Teenage Dream",
+    "artist": "Katy Perry"
+  },
+  {
+    "song": "Is It Any Wonder",
+    "artist": "Keane"
+  },
+  {
+    "song": "Devil In Disguise",
+    "artist": "Kevin Babb"
+  },
+  {
+    "song": "Freak Train",
+    "artist": "Kevin Babb"
+  },
+  {
+    "song": "Thinking Of Her",
+    "artist": "Kevin Babb"
+  },
+  {
+    "song": "Sex On Fire",
+    "artist": "Kings of Leon"
+  },
+  {
+    "song": "Use Somebody",
+    "artist": "Kings of Leon"
+  },
+  {
+    "song": "Shallow",
+    "artist": "Lady Gaga & Bradley Cooper"
+  },
+  {
+    "song": "Immigrant Song",
+    "artist": "Led Zeppelin"
+  },
+  {
+    "song": "Hallelujah",
+    "artist": "Leonard Cohen"
+  },
+  {
+    "song": "Girl On TV",
+    "artist": "LFO"
+  },
+  {
+    "song": "You And Me",
+    "artist": "Lifehouse"
+  },
+  {
+    "song": "Crawling",
+    "artist": "Linkin Park"
+  },
+  {
+    "song": "All Night Long",
+    "artist": "Lionel Richie"
+  },
+  {
+    "song": "Lightning Crashes",
+    "artist": "Live"
+  },
+  {
+    "song": "Royals",
+    "artist": "Lorde"
+  },
+  {
+    "song": "Simple Man",
+    "artist": "Lynyrd Skynyrd"
+  },
+  {
+    "song": "Sweet Home Alabama",
+    "artist": "Lynyrd Skynyrd"
+  },
+  {
+    "song": "Tuesdays Gone",
+    "artist": "Lynyrd Skynyrd"
+  },
+  {
+    "song": "Anything",
+    "artist": "Mae"
+  },
+  {
+    "song": "Rude",
+    "artist": "MAGIC!"
+  },
+  {
+    "song": "Sex And Candy",
+    "artist": "Marcy Playground"
+  },
+  {
+    "song": "This Love",
+    "artist": "Maroon 5"
+  },
+  {
+    "song": "She Will Be Loved",
+    "artist": "Maroon 5"
+  },
+  {
+    "song": "Sunday Morning",
+    "artist": "Maroon 5"
+  },
+  {
+    "song": "Where Did I Go Wrong",
+    "artist": "Martin Sexton"
+  },
+  {
+    "song": "Glory Bound",
+    "artist": "Martin Sexton"
+  },
+  {
+    "song": "Can\u2019t Stop Thinking Bout You",
+    "artist": "Martin Sexton"
+  },
+  {
+    "song": "Nothing Left To Lose",
+    "artist": "Mat Kearney"
+  },
+  {
+    "song": "3am",
+    "artist": "Matchbox Twenty"
+  },
+  {
+    "song": "Come On Get Higher",
+    "artist": "Matt Nathanson"
+  },
+  {
+    "song": "Fade Into You",
+    "artist": "Mazzy Star"
+  },
+  {
+    "song": "The Safety Dance",
+    "artist": "Men Without Hats"
+  },
+  {
+    "song": "Nothing Else Matters",
+    "artist": "Metallica"
+  },
+  {
+    "song": "Hero Of The Day",
+    "artist": "Metallica"
+  },
+  {
+    "song": "Electric Feel",
+    "artist": "MGMT"
+  },
+  {
+    "song": "Time To Pretend",
+    "artist": "MGMT"
+  },
+  {
+    "song": "Kids",
+    "artist": "MGMT"
+  },
+  {
+    "song": "Rock With You",
+    "artist": "Michael Jackson"
+  },
+  {
+    "song": "Whiskey Glasses",
+    "artist": "Morgan Wallen"
+  },
+  {
+    "song": "Cover Me Up",
+    "artist": "Morgan Wallen"
+  },
+  {
+    "song": "To Be With You",
+    "artist": "Mr. Big"
+  },
+  {
+    "song": "Time Is Running Out",
+    "artist": "Muse"
+  },
+  {
+    "song": "Starlight",
+    "artist": "Muse"
+  },
+  {
+    "song": "Cruel To Be Kind",
+    "artist": "Nick Lowe/Letters To Cleo"
+  },
+  {
+    "song": "Far Away",
+    "artist": "Nickelback"
+  },
+  {
+    "song": "How You Remind Me",
+    "artist": "Nickelback"
+  },
+  {
+    "song": "Rockstar",
+    "artist": "Nickelback"
+  },
+  {
+    "song": "Feeling Good",
+    "artist": "Nina Simone"
+  },
+  {
+    "song": "Hurt",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "song": "Everyday Is Exactly The Same",
+    "artist": "Nine Inch Nails"
+  },
+  {
+    "song": "Come As You Are",
+    "artist": "Nirvana"
+  },
+  {
+    "song": "Lake Of Fire",
+    "artist": "Nirvana"
+  },
+  {
+    "song": "Polly",
+    "artist": "Nirvana"
+  },
+  {
+    "song": "Heart Shaped Box",
+    "artist": "Nirvana"
+  },
+  {
+    "song": "Drain You",
+    "artist": "Nirvana"
+  },
+  {
+    "song": "Dont Speak",
+    "artist": "No Doubt"
+  },
+  {
+    "song": "Wonderwall",
+    "artist": "Oasis"
+  },
+  {
+    "song": "Champagne Supernova",
+    "artist": "Oasis"
+  },
+  {
+    "song": "Wagon Wheel",
+    "artist": "Old Crow Medicine Show"
+  },
+  {
+    "song": "Apologize",
+    "artist": "One Republic"
+  },
+  {
+    "song": "Sittin On The Dock Of The Bay",
+    "artist": "Otis Redding"
+  },
+  {
+    "song": "Hey Ya",
+    "artist": "OutKast"
+  },
+  {
+    "song": "Aint It Fun",
+    "artist": "Paramore"
+  },
+  {
+    "song": "Alive",
+    "artist": "Pearl Jam"
+  },
+  {
+    "song": "California",
+    "artist": "Phantom Planet"
+  },
+  {
+    "song": "Wish You Were Here",
+    "artist": "Pink Floyd"
+  },
+  {
+    "song": "Hey There Delilah",
+    "artist": "Plain White T\u2019s"
+  },
+  {
+    "song": "Peaches",
+    "artist": "POTUSA"
+  },
+  {
+    "song": "Starfish And Coffee",
+    "artist": "Prince"
+  },
+  {
+    "song": "Kiss",
+    "artist": "Prince"
+  },
+  {
+    "song": "Blurry",
+    "artist": "Puddle of Mudd"
+  },
+  {
+    "song": "High And Dry",
+    "artist": "Radiohead"
+  },
+  {
+    "song": "Creep",
+    "artist": "Radiohead"
+  },
+  {
+    "song": "Karma Police",
+    "artist": "Radiohead"
+  },
+  {
+    "song": "Broken Road",
+    "artist": "Rascal Flatts"
+  },
+  {
+    "song": "My Wish",
+    "artist": "Rascal Flatts"
+  },
+  {
+    "song": "What Hurts The Most",
+    "artist": "Rascal Flatts"
+  },
+  {
+    "song": "I Got A Woman",
+    "artist": "Ray Charles"
+  },
+  {
+    "song": "Otherside",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "song": "Scar Tissue",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "song": "Soul To Squeeze",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "song": "Under The Bridge",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "song": "Beer",
+    "artist": "Reel Big Fish"
+  },
+  {
+    "song": "Sell Out",
+    "artist": "Reel Big Fish"
+  },
+  {
+    "song": "Mary Jane",
+    "artist": "Rick James"
+  },
+  {
+    "song": "Audience Of One",
+    "artist": "Rise Against"
+  },
+  {
+    "song": "Little Wonders",
+    "artist": "Rob Thomas"
+  },
+  {
+    "song": "Escape(Pina Colada)",
+    "artist": "Rupert Holmes"
+  },
+  {
+    "song": "Dancing With A Stranger",
+    "artist": "Sam Smith & Normani"
+  },
+  {
+    "song": "I Want To Know Your Plans",
+    "artist": "Say Anything"
+  },
+  {
+    "song": "A Walk Through Hell",
+    "artist": "Say Anything"
+  },
+  {
+    "song": "Kiss From A Rose",
+    "artist": "Seal"
+  },
+  {
+    "song": "Closing Time",
+    "artist": "Semisonic"
+  },
+  {
+    "song": "If It Makes You Happy",
+    "artist": "Sheryl Crow"
+  },
+  {
+    "song": "Tomorrow",
+    "artist": "Silverchair"
+  },
+  {
+    "song": "Addicted",
+    "artist": "Simple Plan"
+  },
+  {
+    "song": "Perfect",
+    "artist": "Simple Plan"
+  },
+  {
+    "song": "Can\u2019t Get Enough of You Baby",
+    "artist": "Smash Mouth"
+  },
+  {
+    "song": "Chasing Cars",
+    "artist": "Snow Patrol"
+  },
+  {
+    "song": "I Was Wrong",
+    "artist": "Social Distortion"
+  },
+  {
+    "song": "Down",
+    "artist": "Something Corporate"
+  },
+  {
+    "song": "Stop",
+    "artist": "Spice Girls"
+  },
+  {
+    "song": "Its Been Awhile",
+    "artist": "Staind"
+  },
+  {
+    "song": "The Joker",
+    "artist": "Steve Miller Band"
+  },
+  {
+    "song": "Fly Like An Eagle",
+    "artist": "Steve Miller Band"
+  },
+  {
+    "song": "Badfish",
+    "artist": "Sublime"
+  },
+  {
+    "song": "Santeria",
+    "artist": "Sublime"
+  },
+  {
+    "song": "Doin Time",
+    "artist": "Sublime"
+  },
+  {
+    "song": "What I Got",
+    "artist": "Sublime"
+  },
+  {
+    "song": "Smoke Two Joints",
+    "artist": "Sublime"
+  },
+  {
+    "song": "April 29th, 1992",
+    "artist": "Sublime"
+  },
+  {
+    "song": "Wrong Way",
+    "artist": "Sublime"
+  },
+  {
+    "song": "Someday",
+    "artist": "Sugar Ray"
+  },
+  {
+    "song": "Invisible String",
+    "artist": "Taylor Swift"
+  },
+  {
+    "song": "Be My Mistake",
+    "artist": "The 1975"
+  },
+  {
+    "song": "Midnight Rider",
+    "artist": "The Allman Brothers Band"
+  },
+  {
+    "song": "If I Die Young",
+    "artist": "The Band Perry"
+  },
+  {
+    "song": "With A Little Help From My Friends",
+    "artist": "The Beatles"
+  },
+  {
+    "song": "Hey Jude",
+    "artist": "The Beatles"
+  },
+  {
+    "song": "She Talks To Angels",
+    "artist": "The Black Crowes"
+  },
+  {
+    "song": "Lovefool",
+    "artist": "The Cardigans"
+  },
+  {
+    "song": "Just The Girl",
+    "artist": "The Click Five"
+  },
+  {
+    "song": "Zombie",
+    "artist": "The Cranberries"
+  },
+  {
+    "song": "She Sells Sanctuary",
+    "artist": "The Cult"
+  },
+  {
+    "song": "Just Like Heaven",
+    "artist": "The Cure"
+  },
+  {
+    "song": "Love Song",
+    "artist": "The Cure"
+  },
+  {
+    "song": "Listen To The Music",
+    "artist": "The Doobie Brothers"
+  },
+  {
+    "song": "Got You Where I Want You",
+    "artist": "The Flys"
+  },
+  {
+    "song": "Heartbeat",
+    "artist": "The Fray"
+  },
+  {
+    "song": "You Found Me",
+    "artist": "The Fray"
+  },
+  {
+    "song": "Cable Car",
+    "artist": "The Fray"
+  },
+  {
+    "song": "Bold As Love",
+    "artist": "The Jimi Hendrix Experience"
+  },
+  {
+    "song": "Mr Brightside",
+    "artist": "The Killers"
+  },
+  {
+    "song": "When You Were Young",
+    "artist": "The Killers"
+  },
+  {
+    "song": "You Really Got Me",
+    "artist": "The Kinks"
+  },
+  {
+    "song": "Angela",
+    "artist": "The Lumineers"
+  },
+  {
+    "song": "Can\u2019t You See",
+    "artist": "The Marshall Tucker Band"
+  },
+  {
+    "song": "Im A Believer",
+    "artist": "The Monkees"
+  },
+  {
+    "song": "Every Breath You Take",
+    "artist": "The Police"
+  },
+  {
+    "song": "The District Sleeps Alone Tonight",
+    "artist": "The Postal Service"
+  },
+  {
+    "song": "Cat And Mouse",
+    "artist": "The Red Jumpsuit Apparatus."
+  },
+  {
+    "song": "Honky Tonk Woman",
+    "artist": "The Rolling Stones"
+  },
+  {
+    "song": "Wild Horses",
+    "artist": "The Rolling Stones"
+  },
+  {
+    "song": "What I Like About You",
+    "artist": "The Romantics"
+  },
+  {
+    "song": "Breakeven",
+    "artist": "The Script"
+  },
+  {
+    "song": "Tonight Tonight",
+    "artist": "The Smashing Pumpkins"
+  },
+  {
+    "song": "1979",
+    "artist": "The Smashing Pumpkins"
+  },
+  {
+    "song": "My Girl",
+    "artist": "The Temptations"
+  },
+  {
+    "song": "Blue And Yellow",
+    "artist": "The Used"
+  },
+  {
+    "song": "Bittersweet Symphony",
+    "artist": "The Verve"
+  },
+  {
+    "song": "Lucky Man",
+    "artist": "The Verve"
+  },
+  {
+    "song": "The Freshman",
+    "artist": "The Verve Pipe"
+  },
+  {
+    "song": "6th Avenue Heartache",
+    "artist": "The Wallflowers"
+  },
+  {
+    "song": "We\u2019re Going To Be Friends",
+    "artist": "The White Stripes"
+  },
+  {
+    "song": "Behind Blue Eyes",
+    "artist": "The Who"
+  },
+  {
+    "song": "Whiskey In The Jar",
+    "artist": "Thin Lizzy"
+  },
+  {
+    "song": "Jumper",
+    "artist": "Third Eye Blind"
+  },
+  {
+    "song": "How\u2019s It Gonna Be",
+    "artist": "Third Eye Blind"
+  },
+  {
+    "song": "Semi Charmed Life",
+    "artist": "Third Eye Blind"
+  },
+  {
+    "song": "Never Let You Go",
+    "artist": "Third Eye Blind"
+  },
+  {
+    "song": "Losing A Whole Year",
+    "artist": "Third Eye Blind"
+  },
+  {
+    "song": "Slow Motion",
+    "artist": "Third Eye Blind"
+  },
+  {
+    "song": "Watch The Wind Blow By",
+    "artist": "Tim McGraw"
+  },
+  {
+    "song": "Just To See You Smile",
+    "artist": "Tim McGraw"
+  },
+  {
+    "song": "Where The Green Grass Grows",
+    "artist": "Tim McGraw"
+  },
+  {
+    "song": "Something Like That",
+    "artist": "Tim McGraw"
+  },
+  {
+    "song": "When The Stars Go Blue",
+    "artist": "Tim McGraw"
+  },
+  {
+    "song": "Possum Kingdom",
+    "artist": "Toadies"
+  },
+  {
+    "song": "I Love This Bar",
+    "artist": "Toby Keith"
+  },
+  {
+    "song": "Shouldve Been A Cowboy",
+    "artist": "Toby Keith"
+  },
+  {
+    "song": "Breakdown",
+    "artist": "Tom Petty"
+  },
+  {
+    "song": "You Don\u2019t Know How It Feels",
+    "artist": "Tom Petty"
+  },
+  {
+    "song": "Free Fallin",
+    "artist": "Tom Petty"
+  },
+  {
+    "song": "I Won\u2019t Back Down",
+    "artist": "Tom Petty"
+  },
+  {
+    "song": "Mary Jane\u2019s Last Dance",
+    "artist": "Tom Petty and the Heartbreakers"
+  },
+  {
+    "song": "Learning To Fly",
+    "artist": "Tom Petty and the Heartbreakers"
+  },
+  {
+    "song": "Give Me One Reason",
+    "artist": "Tracy Chapman"
+  },
+  {
+    "song": "Fast Car",
+    "artist": "Tracy Chapman"
+  },
+  {
+    "song": "Marry Me",
+    "artist": "Train"
+  },
+  {
+    "song": "Drops of Jupiter",
+    "artist": "Train"
+  },
+  {
+    "song": "Calling All Angels",
+    "artist": "Train"
+  },
+  {
+    "song": "Sunday Bloody Sunday",
+    "artist": "U2"
+  },
+  {
+    "song": "With Or Without You",
+    "artist": "U2"
+  },
+  {
+    "song": "Beautiful Day",
+    "artist": "U2"
+  },
+  {
+    "song": "I Still Havent Found What Im Looking For",
+    "artist": "U2"
+  },
+  {
+    "song": "Reinventing Your Exit",
+    "artist": "Underoath"
+  },
+  {
+    "song": "Panama",
+    "artist": "Van Halen"
+  },
+  {
+    "song": "Dance The Night Away",
+    "artist": "Van Halen"
+  },
+  {
+    "song": "Runnin With The Devil",
+    "artist": "Van Halen"
+  },
+  {
+    "song": "Brown Eyed Girl",
+    "artist": "Van Morrison"
+  },
+  {
+    "song": "Blister In The Sun",
+    "artist": "Violent Femmes"
+  },
+  {
+    "song": "Back Pocket",
+    "artist": "Vulfpeck"
+  },
+  {
+    "song": "Shut Up And Dance",
+    "artist": "WALK THE MOON"
+  },
+  {
+    "song": "Magnet And Steel",
+    "artist": "Walter Egan"
+  },
+  {
+    "song": "Island In The Sun",
+    "artist": "Weezer"
+  },
+  {
+    "song": "Beverly Hills",
+    "artist": "Weezer"
+  },
+  {
+    "song": "Buddy Holly",
+    "artist": "Weezer"
+  },
+  {
+    "song": "Hash Pipe",
+    "artist": "Weezer"
+  },
+  {
+    "song": "In The Garage",
+    "artist": "Weezer"
+  },
+  {
+    "song": "My Name Is Jonas",
+    "artist": "Weezer"
+  },
+  {
+    "song": "Say It Aint So",
+    "artist": "Weezer"
+  },
+  {
+    "song": "Pork And Beans",
+    "artist": "Weezer"
+  },
+  {
+    "song": "Undone(Sweater Song)",
+    "artist": "Weezer"
+  },
+  {
+    "song": "Teenage Dirtbag",
+    "artist": "Wheatus"
+  },
+  {
+    "song": "Mustang Sally",
+    "artist": "Wilson Pickett"
+  },
+  {
+    "song": "Wondering Why",
+    "artist": "Red Clay Strays"
+  },
+  {
+    "song": "Only One",
+    "artist": "Yellowcard"
+  },
+  {
+    "song": "Way Away",
+    "artist": "Yellowcard"
+  },
+  {
+    "song": "Ocean Avenue",
+    "artist": "Yellowcard"
+  },
+  {
+    "song": "Chicken Fried",
+    "artist": "Zac Brown Band"
+  },
+  {
+    "song": "Honestly",
+    "artist": "Zwan"
+  }
+]
