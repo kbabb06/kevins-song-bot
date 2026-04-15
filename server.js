@@ -46,13 +46,6 @@ let nextId = requestQueue.reduce(function (max, item) {
 app.use(cors());
 app.use(express.json());
 
-app.use(function (req, res, next) {
-  res.setHeader(
-    "Content-Security-Policy",
-    "frame-ancestors 'self' https://*.framer.website https://framer.com https://*.framer.com"
-  );
-  next();
-});
 
 app.use(express.static("public"));
 
