@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
+const OpenAI = require("openai");
 
 dotenv.config();
 
@@ -11,6 +12,10 @@ const port = process.env.PORT || 3000;
 
 const SONGS_PATH = path.join(__dirname, "songs.json");
 const QUEUE_PATH = path.join(__dirname, "queue.json");
+
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
 
 function readJsonFile(filePath, fallback) {
   try {
@@ -45,8 +50,6 @@ let nextId = requestQueue.reduce(function (max, item) {
 
 app.use(cors());
 app.use(express.json());
-
-
 app.use(express.static("public"));
 
 app.get("/api/songs", function (req, res) {
@@ -65,6 +68,82 @@ app.get("/api/songs", function (req, res) {
   }).slice(0, 25);
 
   res.json(results);
+});
+
+app.post("/api/song-bot", async function (req, res) {
+  try {
+    const requestText = String(req.body.request || "").trim();
+
+    if (!requestText) {
+      return res.status(400).json({ error: "Request is required" });
+    }
+
+    const songCatalog = knownSongs.map(function (entry, index) {
+      return (index + 1) + ". " + entry.song + " - " + entry.artist;
+    }).join("\n");
+
+    const systemPrompt = [
+      "You are helping a live musician respond to audience song requests.",
+      "You may ONLY suggest songs from the provided catalog.",
+      "Do not invent songs.",
+      "Match by vibe, genre, artist similarity, decade, mood, tempo, or theme when possible.",
+      "Prefer the strongest 3 to 5 matches.",
+      "If nothing fits well, return an empty suggestions array.",
+      "Return valid JSON only in this exact shape:",
+      '{',
+      '  "reply": "short friendly sentence",',
+      '  "suggestions": [',
+      '    { "song": "Song Title", "artist": "Artist Name" }',
+      '  ]',
+      '}',
+      "",
+      "SONG CATALOG:",
+      songCatalog
+    ].join("\n");
+
+    const completion = await client.chat.completions.create({
+      model: "gpt-4.1-mini",
+      temperature: 0.4,
+      response_format: { type: "json_object" },
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: requestText }
+      ]
+    });
+
+    const raw = completion.choices[0].message.content;
+    const parsed = JSON.parse(raw);
+
+    const safeSuggestions = Array.isArray(parsed.suggestions)
+      ? parsed.suggestions
+          .map(function (item) {
+            return {
+              song: String(item.song || "").trim(),
+              artist: String(item.artist || "").trim()
+            };
+          })
+          .filter(function (item) {
+            return item.song;
+          })
+          .filter(function (item) {
+            return knownSongs.some(function (known) {
+              return (
+                known.song.toLowerCase() === item.song.toLowerCase() &&
+                known.artist.toLowerCase() === item.artist.toLowerCase()
+              );
+            });
+          })
+          .slice(0, 5)
+      : [];
+
+    res.json({
+      reply: String(parsed.reply || "Here are a few ideas from my setlist."),
+      suggestions: safeSuggestions
+    });
+  } catch (err) {
+    console.error("Song bot error:", err);
+    res.status(500).json({ error: "Song bot failed" });
+  }
 });
 
 app.get("/api/queue", function (req, res) {

@@ -1,71 +1,130 @@
 <!DOCTYPE html>
 <html>
-<body style="background:#0b0b0b;color:#fff;font-family:sans-serif;max-width:700px;margin:30px auto;padding:20px;">
+<body style="background:#111;color:#fff;font-family:sans-serif;max-width:600px;margin:40px auto;">
 
-<h1>🎸 Request a Song</h1>
+<h1>Request a Song</h1>
 
-<input id="requester" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;" />
-<input id="email" placeholder="Email (required)" style="width:100%;padding:12px;margin-bottom:10px;border:2px solid #444;" />
-<input id="phone" placeholder="Phone (optional)" style="width:100%;padding:12px;margin-bottom:10px;" />
+<input id="requester" placeholder="Your name (optional)" style="width:100%;padding:10px;margin-bottom:10px;" />
+<input id="email" placeholder="Your email" style="width:100%;padding:10px;margin-bottom:10px;" />
+<input id="phone" placeholder="Your phone (optional)" style="width:100%;padding:10px;margin-bottom:10px;" />
 
-<input id="search" placeholder="Search song..." style="width:100%;padding:16px;font-size:18px;" />
+<input id="search" placeholder="Type a song, artist, genre, or vibe..." style="width:100%;padding:10px;" />
+<button onclick="searchSongs()" style="width:100%;padding:10px;margin-top:10px;">Find Matching Songs</button>
 
-<div id="status" style="margin-top:10px;color:#f66;"></div>
 <div id="results" style="margin-top:20px;"></div>
 
 <script>
-let debounce;
-
-document.getElementById("search").addEventListener("input", function () {
-  clearTimeout(debounce);
-  debounce = setTimeout(searchSongs, 250);
-});
-
 async function searchSongs() {
-  const q = document.getElementById("search").value;
-  if (!q) return;
-
-  const res = await fetch("/api/songs?q=" + encodeURIComponent(q));
-  const data = await res.json();
-
+  const q = document.getElementById("search").value.trim();
   const container = document.getElementById("results");
-  container.innerHTML = "";
 
-  data.forEach(song => {
-    const div = document.createElement("div");
-    div.style.padding = "14px";
-    div.style.border = "1px solid #222";
-    div.style.marginBottom = "10px";
-    div.style.cursor = "pointer";
+  if (!q) {
+    container.innerHTML = "<p>Please type something first.</p>";
+    return;
+  }
 
-    div.innerHTML = "<strong>" + song.song + "</strong><br><span style='color:#aaa'>" + song.artist + "</span>";
+  container.innerHTML = "<p>Finding matches...</p>";
 
-    div.onclick = async function () {
-      const email = document.getElementById("email").value;
+  try {
+    const res = await fetch("/api/song-bot", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ request: q })
+    });
 
-      // 🔒 FRONTEND VALIDATION
-      if (!email || !email.includes("@")) {
-        document.getElementById("status").innerText = "Valid email required before requesting";
-        return;
-      }
+    const data = await res.json();
 
-      await fetch("/api/queue", {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({
-          song: song.song,
-          artist: song.artist,
-          requester: document.getElementById("requester").value,
-          email: email,
-          phone: document.getElementById("phone").value
-        })
-      });
+    container.innerHTML = "";
 
-      document.getElementById("status").innerText = "Added: " + song.song;
-    };
+    // Instruction text
+    const instruction = document.createElement("div");
+    instruction.style.padding = "10px";
+    instruction.style.marginBottom = "10px";
+    instruction.style.background = "#1a1a1a";
+    instruction.style.borderRadius = "6px";
+    instruction.style.fontSize = "14px";
+    instruction.innerText = "Tap a song below to submit your request";
+    container.appendChild(instruction);
 
-    container.appendChild(div);
-  });
+    // AI reply
+    const reply = document.createElement("div");
+    reply.style.padding = "10px";
+    reply.style.marginBottom = "10px";
+    reply.style.fontStyle = "italic";
+    reply.style.color = "#aaa";
+    reply.innerText = data.reply || "";
+    container.appendChild(reply);
+
+    if (!data.suggestions || !data.suggestions.length) {
+      const empty = document.createElement("div");
+      empty.style.padding = "10px";
+      empty.innerText = "No strong matches found.";
+      container.appendChild(empty);
+      return;
+    }
+
+    data.suggestions.forEach(function (song) {
+      const div = document.createElement("div");
+      div.style.padding = "14px";
+      div.style.marginBottom = "8px";
+      div.style.background = "#1a1a1a";
+      div.style.borderRadius = "6px";
+      div.style.cursor = "pointer";
+      div.style.transition = "0.2s";
+
+      div.innerText = song.song + " - " + song.artist;
+
+      div.onmouseenter = () => div.style.background = "#2a2a2a";
+      div.onmouseleave = () => div.style.background = "#1a1a1a";
+
+      div.onclick = async function () {
+        const requester = document.getElementById("requester").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+
+        if (!email) {
+          alert("Enter your email first to submit a request.");
+          document.getElementById("email").focus();
+          return;
+        }
+
+        div.innerText = "Submitting...";
+        div.style.opacity = "0.6";
+
+        const queueRes = await fetch("/api/queue", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            song: song.song,
+            artist: song.artist,
+            requester: requester,
+            email: email,
+            phone: phone
+          })
+        });
+
+        const queueData = await queueRes.json();
+
+        if (!queueRes.ok) {
+          alert(queueData.error || "Could not submit request");
+          div.style.opacity = "1";
+          div.innerText = song.song + " - " + song.artist;
+          return;
+        }
+
+        div.innerText = "✅ Submitted: " + song.song;
+        div.style.background = "#0a3";
+      };
+
+      container.appendChild(div);
+    });
+
+  } catch (err) {
+    console.error(err);
+    container.innerHTML = "<p>Error finding matches.</p>";
+  }
 }
 </script>
 

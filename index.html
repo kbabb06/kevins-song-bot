@@ -8,54 +8,56 @@
   <meta name="CocoaVersion" content="2685.5">
   <style type="text/css">
     span.s1 {font-kerning: none}
+    span.s2 {font: 24.0px Arial; font-kerning: none}
   </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>cat &lt;&lt;'EOF' &gt; public/index.html</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;!DOCTYPE html&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;html&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;body style="background:#111;color:#fff;font-family:sans-serif;max-width:600px;margin:40px auto;"&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;h1&gt;Request a Song&lt;/h1&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;input id="search" placeholder="Search..." style="width:100%;padding:10px;" /&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;button onclick="searchSongs()" style="width:100%;padding:10px;margin-top:10px;"&gt;Search&lt;/button&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;div id="results"&gt;&lt;/div&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;script&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>async function searchSongs() {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const q = document.getElementById("search").value;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const res = await fetch('/api/songs?q=' + encodeURIComponent(q));</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const data = await res.json();</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const container = document.getElementById("results");</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>container.innerHTML = "";</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>data.forEach(song =&gt; {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>const div = document.createElement("div");</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.style.padding = "10px";</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.style.borderBottom = "1px solid #333";</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.innerText = song.song + " - " + song.artist;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.onclick = async () =&gt; {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>await fetch('/api/queue', {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>method: 'POST',</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>headers: { 'Content-Type': 'application/json' },</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>body: JSON.stringify(song)</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>});</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>alert("Queued: " + song.song);</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>};</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>container.appendChild(div);</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>});</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/script&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/body&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/html&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>EOF</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>cat &lt;&lt;'EOF' &gt; public/index.html</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;!DOCTYPE html&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;html&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;body style="background:#111;color:#fff;font-family:sans-serif;max-width:600px;margin:40px auto;"&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;h1&gt;Request a Song&lt;/h1&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;input id="search" placeholder="Search..." style="width:100%;padding:10px;" /&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;button onclick="searchSongs()" style="width:100%;padding:10px;margin-top:10px;"&gt;Search&lt;/button&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;div id="results"&gt;&lt;/div&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;script&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>async function searchSongs() {</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const q = document.getElementById("search").value;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000"><span class="s2"><b><span class="Apple-converted-space">  </span>const res = await </b></span><span class="s1">fetch('/api/song-bot'</span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space"> </span>+ encodeURIComponent(q));</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const data = await res.json();</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>const container = document.getElementById("results");</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>container.innerHTML = "";</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>data.forEach(song =&gt; {</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>const div = document.createElement("div");</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.style.padding = "10px";</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.style.borderBottom = "1px solid #333";</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.innerText = song.song + " - " + song.artist;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>div.onclick = async () =&gt; {</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>await fetch('/api/queue', {</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>method: 'POST',</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>headers: { 'Content-Type': 'application/json' },</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">        </span>body: JSON.stringify(song)</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>});</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">      </span>alert("Queued: " + song.song);</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>};</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>container.appendChild(div);</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>});</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>}</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/script&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000; min-height: 28.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/body&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/html&gt;</b><b></b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; -webkit-text-stroke: #000000"><span class="s1"><b>EOF</b><b></b></span></h1>
 </body>
 </html>
