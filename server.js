@@ -88,10 +88,10 @@ app.post("/api/song-bot", async function (req, res) {
       "Do not invent songs.",
       "Choose the best 3 to 5 matches based on vibe, genre, era, artist similarity, mood, tempo, or theme.",
       "Return ONLY valid JSON in exactly this shape:",
-      '{',
+      "{",
       '  "reply": "short friendly sentence",',
       '  "matches": [1, 2, 3]',
-      '}',
+      "}",
       "The numbers in matches must be catalog line numbers from the SONG CATALOG below.",
       "If nothing fits, return an empty matches array.",
       "",
@@ -112,6 +112,10 @@ app.post("/api/song-bot", async function (req, res) {
     const raw = completion.choices[0].message.content;
     const parsed = JSON.parse(raw);
 
+    console.log("REQUEST TEXT:", requestText);
+    console.log("RAW MODEL RESPONSE:", raw);
+    console.log("PARSED MODEL RESPONSE:", parsed);
+
     let suggestions = [];
 
     if (Array.isArray(parsed.matches)) {
@@ -126,18 +130,25 @@ app.post("/api/song-bot", async function (req, res) {
         .slice(0, 5);
     }
 
-    // fallback local search if AI returns nothing
     if (!suggestions.length) {
-      const q = requestText.toLowerCase();
+      const words = requestText.toLowerCase().split(/\s+/).filter(Boolean);
 
       suggestions = knownSongs.filter(function (entry) {
-        return (
-          entry.song.toLowerCase().includes(q) ||
-          entry.artist.toLowerCase().includes(q) ||
-          entry.full.toLowerCase().includes(q)
-        );
+        const haystack = (
+          entry.song + " " + entry.artist + " " + entry.full
+        ).toLowerCase();
+
+        return words.some(function (word) {
+          return haystack.includes(word);
+        });
       }).slice(0, 5);
     }
+
+    if (!suggestions.length) {
+      suggestions = knownSongs.slice(0, 5);
+    }
+
+    console.log("FINAL SUGGESTIONS:", suggestions);
 
     res.json({
       reply: String(parsed.reply || "Here are a few ideas from my setlist."),
@@ -147,10 +158,6 @@ app.post("/api/song-bot", async function (req, res) {
     console.error("Song bot error:", err);
     res.status(500).json({ error: "Song bot failed" });
   }
-});
-
-app.get("/api/queue", function (req, res) {
-  res.json(requestQueue);
 });
 
 app.post("/api/queue", function (req, res) {
