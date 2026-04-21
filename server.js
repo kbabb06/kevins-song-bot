@@ -84,18 +84,16 @@ app.post("/api/song-bot", async function (req, res) {
 
     const systemPrompt = [
       "You are helping a live musician respond to audience song requests.",
-      "You may ONLY suggest songs from the provided catalog.",
+      "You may ONLY choose songs from the provided catalog.",
       "Do not invent songs.",
-      "Match by vibe, genre, artist similarity, decade, mood, tempo, or theme when possible.",
-      "Prefer the strongest 3 to 5 matches.",
-      "If nothing fits well, return an empty suggestions array.",
-      "Return valid JSON only in this exact shape:",
+      "Choose the best 3 to 5 matches based on vibe, genre, era, artist similarity, mood, tempo, or theme.",
+      "Return ONLY valid JSON in exactly this shape:",
       '{',
       '  "reply": "short friendly sentence",',
-      '  "suggestions": [',
-      '    { "song": "Song Title", "artist": "Artist Name" }',
-      '  ]',
+      '  "matches": [1, 2, 3]',
       '}',
+      "The numbers in matches must be catalog line numbers from the SONG CATALOG below.",
+      "If nothing fits, return an empty matches array.",
       "",
       "SONG CATALOG:",
       songCatalog
@@ -103,7 +101,7 @@ app.post("/api/song-bot", async function (req, res) {
 
     const completion = await client.chat.completions.create({
       model: "gpt-4.1-mini",
-      temperature: 0.4,
+      temperature: 0.3,
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: systemPrompt },
@@ -114,31 +112,36 @@ app.post("/api/song-bot", async function (req, res) {
     const raw = completion.choices[0].message.content;
     const parsed = JSON.parse(raw);
 
-    const safeSuggestions = Array.isArray(parsed.suggestions)
-      ? parsed.suggestions
-          .map(function (item) {
-            return {
-              song: String(item.song || "").trim(),
-              artist: String(item.artist || "").trim()
-            };
-          })
-          .filter(function (item) {
-            return item.song;
-          })
-          .filter(function (item) {
-            return knownSongs.some(function (known) {
-              return (
-                known.song.toLowerCase() === item.song.toLowerCase() &&
-                known.artist.toLowerCase() === item.artist.toLowerCase()
-              );
-            });
-          })
-          .slice(0, 5)
-      : [];
+    let suggestions = [];
+
+    if (Array.isArray(parsed.matches)) {
+      suggestions = parsed.matches
+        .map(function (n) {
+          const index = Number(n) - 1;
+          return knownSongs[index];
+        })
+        .filter(function (item) {
+          return item && item.song;
+        })
+        .slice(0, 5);
+    }
+
+    // fallback local search if AI returns nothing
+    if (!suggestions.length) {
+      const q = requestText.toLowerCase();
+
+      suggestions = knownSongs.filter(function (entry) {
+        return (
+          entry.song.toLowerCase().includes(q) ||
+          entry.artist.toLowerCase().includes(q) ||
+          entry.full.toLowerCase().includes(q)
+        );
+      }).slice(0, 5);
+    }
 
     res.json({
       reply: String(parsed.reply || "Here are a few ideas from my setlist."),
-      suggestions: safeSuggestions
+      suggestions: suggestions
     });
   } catch (err) {
     console.error("Song bot error:", err);
