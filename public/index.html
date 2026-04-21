@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body style="background:#111;color:#fff;font-family:sans-serif;max-width:600px;margin:40px auto;">
+<body style="background:transparent;color:#fff;font-family:sans-serif;max-width:600px;margin:40px auto;">
 
 <h1>Request a Song</h1>
 
@@ -38,17 +38,15 @@ async function searchSongs() {
 
     container.innerHTML = "";
 
-    // Instruction text
     const instruction = document.createElement("div");
     instruction.style.padding = "10px";
     instruction.style.marginBottom = "10px";
-    instruction.style.background = "#1a1a1a";
+    instruction.style.background = "rgba(0,0,0,0.2)";
     instruction.style.borderRadius = "6px";
     instruction.style.fontSize = "14px";
     instruction.innerText = "Tap a song below to submit your request";
     container.appendChild(instruction);
 
-    // AI reply
     const reply = document.createElement("div");
     reply.style.padding = "10px";
     reply.style.marginBottom = "10px";
@@ -69,15 +67,15 @@ async function searchSongs() {
       const div = document.createElement("div");
       div.style.padding = "14px";
       div.style.marginBottom = "8px";
-      div.style.background = "#1a1a1a";
+      div.style.background = "rgba(0,0,0,0.2)";
       div.style.borderRadius = "6px";
       div.style.cursor = "pointer";
       div.style.transition = "0.2s";
 
       div.innerText = song.song + " - " + song.artist;
 
-      div.onmouseenter = () => div.style.background = "#2a2a2a";
-      div.onmouseleave = () => div.style.background = "#1a1a1a";
+      div.onmouseenter = () => div.style.background = "rgba(0,0,0,0.35)";
+      div.onmouseleave = () => div.style.background = "rgba(0,0,0,0.2)";
 
       div.onclick = async function () {
         const requester = document.getElementById("requester").value.trim();
