@@ -160,12 +160,20 @@ app.post("/api/song-bot", async function (req, res) {
   }
 });
 
+app.get("/api/queue", function (req, res) {
+  res.json(requestQueue);
+});
+
 app.post("/api/queue", function (req, res) {
   const song = String(req.body.song || "").trim();
   const artist = String(req.body.artist || "").trim();
   const requester = String(req.body.requester || "").trim();
   const email = String(req.body.email || "").trim();
   const phone = String(req.body.phone || "").trim();
+
+  if (!requester) {
+    return res.status(400).json({ error: "Name is required" });
+  }
 
   if (!email) {
     return res.status(400).json({ error: "Email is required" });
