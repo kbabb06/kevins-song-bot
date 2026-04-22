@@ -18,8 +18,10 @@
 <div id="queue"></div>
 
 <script>
+const API_BASE = "https://kevins-song-bot.onrender.com";
+
 async function loadQueue() {
-  const res = await fetch("/api/queue");
+  const res = await fetch(API_BASE + "/api/queue");
   const data = await res.json();
 
   const container = document.getElementById("queue");
@@ -68,7 +70,7 @@ async function loadQueue() {
     playedBtn.style.cursor = "pointer";
     playedBtn.disabled = item.status === "played";
     playedBtn.onclick = async function () {
-      await fetch("/api/queue/" + item.id, {
+      await fetch(API_BASE + "/api/queue/" + item.id, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -83,7 +85,7 @@ async function loadQueue() {
     deleteBtn.style.padding = "8px 12px";
     deleteBtn.style.cursor = "pointer";
     deleteBtn.onclick = async function () {
-      await fetch("/api/queue/" + item.id, {
+      await fetch(API_BASE + "/api/queue/" + item.id, {
         method: "DELETE"
       });
       loadQueue();
@@ -98,7 +100,7 @@ async function loadQueue() {
 }
 
 async function clearQueue() {
-  await fetch("/api/queue", {
+  await fetch(API_BASE + "/api/queue", {
     method: "DELETE"
   });
   loadQueue();
