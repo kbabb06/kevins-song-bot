@@ -2,12 +2,70 @@
 <html>
 <body style="background:transparent;color:#fff;font-family:sans-serif;max-width:600px;margin:40px auto;">
 
-<input id="requester" placeholder="Your name (optional)" style="width:100%;padding:10px;margin-bottom:10px;" />
-<input id="email" placeholder="Your email" style="width:100%;padding:10px;margin-bottom:10px;" />
-<input id="phone" placeholder="Your phone (optional)" style="width:100%;padding:10px;margin-bottom:10px;" />
+<style>
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 14px;
+}
 
-<input id="search" placeholder="Type a song, artist, genre, or vibe..." style="width:100%;padding:10px;" />
-<button onclick="searchSongs()" style="width:100%;padding:10px;margin-top:10px;">Find Matching Songs</button>
+input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: #4f8cff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #3a6edc;
+}
+
+.card {
+  padding: 14px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.info {
+  padding: 12px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  font-size: 14px;
+  color: #bbb;
+}
+</style>
+
+<input id="requester" placeholder="Your name (required)" />
+<input id="email" placeholder="Your email (required)" />
+<input id="phone" placeholder="Your phone (optional)" />
+
+<input id="search" placeholder="Type a song, artist, or vibe..." />
+<button onclick="searchSongs()">Find Matching Songs</button>
 
 <div id="results" style="margin-top:20px;"></div>
 
@@ -26,36 +84,21 @@ async function searchSongs() {
   try {
     const res = await fetch("/api/song-bot", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ request: q })
     });
 
     const data = await res.json();
-
     container.innerHTML = "";
 
     const instruction = document.createElement("div");
-    instruction.style.padding = "10px";
-    instruction.style.marginBottom = "10px";
-    instruction.style.background = "rgba(0,0,0,0.2)";
-    instruction.style.borderRadius = "6px";
-    instruction.style.fontSize = "14px";
+    instruction.className = "info";
     instruction.innerText = "Tap a song below to submit your request";
     container.appendChild(instruction);
 
-    const reply = document.createElement("div");
-    reply.style.padding = "10px";
-    reply.style.marginBottom = "10px";
-    reply.style.fontStyle = "italic";
-    reply.style.color = "#aaa";
-    reply.innerText = data.reply || "";
-    container.appendChild(reply);
-
     if (!data.suggestions || !data.suggestions.length) {
       const empty = document.createElement("div");
-      empty.style.padding = "10px";
+      empty.className = "info";
       empty.innerText = "No strong matches found.";
       container.appendChild(empty);
       return;
@@ -63,25 +106,22 @@ async function searchSongs() {
 
     data.suggestions.forEach(function (song) {
       const div = document.createElement("div");
-      div.style.padding = "14px";
-      div.style.marginBottom = "8px";
-      div.style.background = "rgba(0,0,0,0.2)";
-      div.style.borderRadius = "6px";
-      div.style.cursor = "pointer";
-      div.style.transition = "0.2s";
-
+      div.className = "card";
       div.innerText = song.song + " - " + song.artist;
-
-      div.onmouseenter = () => div.style.background = "rgba(0,0,0,0.35)";
-      div.onmouseleave = () => div.style.background = "rgba(0,0,0,0.2)";
 
       div.onclick = async function () {
         const requester = document.getElementById("requester").value.trim();
         const email = document.getElementById("email").value.trim();
         const phone = document.getElementById("phone").value.trim();
 
+        if (!requester) {
+          alert("Please enter your name.");
+          document.getElementById("requester").focus();
+          return;
+        }
+
         if (!email) {
-          alert("Enter your email first to submit a request.");
+          alert("Please enter your email.");
           document.getElementById("email").focus();
           return;
         }
@@ -95,9 +135,9 @@ async function searchSongs() {
           body: JSON.stringify({
             song: song.song,
             artist: song.artist,
-            requester: requester,
-            email: email,
-            phone: phone
+            requester,
+            email,
+            phone
           })
         });
 
